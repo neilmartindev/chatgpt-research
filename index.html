@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ChatGPT</title>
+  </head>
+  <body>
+    <h1>ChatGPT</h1>
+    <div>
+      <label for="input">What would you like to say?</label>
+      <input type="text" id="input" name="input">
+      <button onclick="askChatGPT()">Ask ChatGPT</button>
+    </div>
+    <div>
+      <h2>You said:</h2>
+      <div id="user-said"></div>
+    </div>
+    <div>
+      <h2>ChatGPT says:</h2>
+      <div id="chatgpt-response"></div>
+    </div>
+    <script>
+      function askChatGPT() {
+        const input = document.getElementById("input").value;
+
+        fetch("/ask_chatgpt", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ input })
+        })
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("user-said").innerHTML = input;
+          document.getElementById("chatgpt-response").innerHTML = data.response;
+        })
+        .catch(error => console.error(error));
+      }
+    </script>
+  </body>
+</html>
