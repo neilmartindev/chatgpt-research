@@ -1,6 +1,0 @@
-Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: requests in /home/neil/.local/lib/python3.10/site-packages (2.25.1)
-Requirement already satisfied: chardet<5,>=3.0.2 in /usr/lib/python3/dist-packages (from requests) (4.0.0)
-Requirement already satisfied: idna<3,>=2.5 in /home/neil/.local/lib/python3.10/site-packages (from requests) (2.10)
-Requirement already satisfied: urllib3<1.27,>=1.21.1 in /usr/lib/python3/dist-packages (from requests) (1.26.9)
-Requirement already satisfied: certifi>=2017.4.17 in /home/neil/.local/lib/python3.10/site-packages (from requests) (2022.12.7)
